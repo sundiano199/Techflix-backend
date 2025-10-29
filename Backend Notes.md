@@ -110,4 +110,6 @@ CONNECTING FRONT END TO BACKEND
 --> Create a useAuth.js file under hooks
 --> Make sure to add <AuthProvider> to the app.jsx too
 --> Make sure {handleGetUser} = useAuth() in dashboard layout
+--> To handle the search in the front end. Create a useCustomParams file in the hooks
+--> Destructure the usefetch and useCustomParams in the Home.jsx and do the if statements too
 

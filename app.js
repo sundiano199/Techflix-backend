@@ -8,30 +8,9 @@ const movieRouter = require("./routes/movieRouter");
 const bookmarkRouter = require("./routes/bookmarkRouter");
 
 const app = express();
-const port = process.env.PORT || 1010;
+const port = process.env.PORT;
 
-// ---- CORS config: allow only your frontend origin (safer than "*") ----
-const corsOptions = {
-  origin: "http://localhost:5173", // change to your frontend origin (or an array of allowed origins)
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Accept",
-    "X-Requested-With",
-  ],
-  credentials: true, // if you use cookies or authorize with credentials
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions)); // MUST come before routes
-
-// optional: log incoming requests (good for debugging)
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  next();
-});
-
+app.use(cors());
 app.use(express.json());
 
 // your routes
